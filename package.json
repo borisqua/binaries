@@ -1,0 +1,17 @@
+{
+  "name": "binaries",
+  "version": "0.0.1",
+  "description": "Binary functions library",
+  "main": "src/main/js/index.js",
+  "author": "Boris Bronovitsky",
+  "license": "MIT",
+  "scripts": {
+    "start": "echo mbstreamer is a binary streaming library, it can't be started && exit 0",
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "chai": "latest",
+    "mocha": "latest"
+  }
+}
+

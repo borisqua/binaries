@@ -1,0 +1,10 @@
+package-lock.json
+*.html
+*.css
+*.map
+
+.idea/
+node_modules/
+src/bundles/
+distr/
+external/
