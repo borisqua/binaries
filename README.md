@@ -1,6 +1,6 @@
 # Binary functions
 
-This is my set of functions to operate with binary data
+This is my set of functions to operate binary data
 
 ## Reading binary buffer
 
