@@ -6,10 +6,10 @@ This is my set of functions to operate with binary data
 [Reading Binary Buffer](#reading)
   - [readBigEndian(buffer, length, offset)](#readBigEndian)
 
-<a name="reading"/>
+<a name="reading"></a>
 ## Reading Binary Buffer
 
-<a name="readBigEndian"/>
+<a name="readBigEndian"></a>
 ### readBigEndian(buffer, length, offset)
 
 Reading a big endian value of size ```length``` from ```buffer``` with offset ```offset```
