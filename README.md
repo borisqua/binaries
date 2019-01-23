@@ -3,8 +3,11 @@
 This is my set of functions to operate with binary data
 
 ## Table of Contents
-[Reading Binary Buffer](#reading)
+- [Reading Binary Buffer](#reading)
   - [readBigEndian(buffer, length, offset)](#readBigEndian)
+  - [readLittleEndian(buffer, length, offset)](#readBigEndian)
+  - [read64BigEndian(buffer, length, offset)](#readBigEndian)
+  - [read64LittleEndian(buffer, length, offset)](#readBigEndian)
 
 <a name="reading"></a>
 ## Reading Binary Buffer
