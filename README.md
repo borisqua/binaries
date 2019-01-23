@@ -2,15 +2,15 @@
 
 This is my set of functions to operate binary data
 
-## Reading binary buffer
+## Reading Binary Buffer
 
-### readBigEndian
+### Reading Big Endian value from buffer
 
 ```JavaScript
   readBigEndian(buffer, length, offset)
 ```  
 
-  Reads byte sequence of defined length and returns its String representation as a hexadecimal value 
+  Reads byte sequence of defined length and returns its ```JavaScript String``` representation as a hexadecimal value 
 
 ### readLittleEndian
 
