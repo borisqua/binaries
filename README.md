@@ -24,7 +24,7 @@ alias:
 
 Reads byte sequence of defined ```length``` and returns its ```String``` representation as a hexadecimal value according to _Big Endian_ notation
 
-### readLittleigEndian(buffer, length, offset)
+### readLittleEndian(buffer, length, offset)
 
 Reading a little endian value of size ```length``` from the ```buffer``` with offset ```offset```
 
@@ -48,7 +48,7 @@ alias:
 
   Reads byte sequence of defined length and returns its ```String``` representation as a hexadecimal value  according to _Little Endian_ notation
 
-### read64LittleigEndian(buffer, offset)
+### read64LittleEndian(buffer, offset)
 
 Reading a little endian 64 bit value from the buffer
 
