@@ -35,15 +35,6 @@ alias:
 
 Reads byte sequence of defined length and returns its ```String``` representation as a hexadecimal value  according to _Little Endian_ notation
 
-### read64LittleigEndian(buffer, offset)
-
-Reading a little endian 64 bit value from the buffer
-
-alias:
-```JavaScript
-  read64LE(buffer, offset)
-```  
-
 Reads 64 bytes sequence of defined length and returns its ```String``` representation as a hexadecimal value  according to _Little Endian_ notation
 
 ### read64BigEndian(buffer, offset)
@@ -56,4 +47,13 @@ alias:
 ```  
 
   Reads byte sequence of defined length and returns its ```String``` representation as a hexadecimal value  according to _Little Endian_ notation
+
+### read64LittleigEndian(buffer, offset)
+
+Reading a little endian 64 bit value from the buffer
+
+alias:
+```JavaScript
+  read64LE(buffer, offset)
+```  
 
