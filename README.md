@@ -10,7 +10,7 @@ This is my set of functions to operate binary data
   readBigEndian(buffer, length, offset)
 ```  
 
-  Reads byte sequence of defined length and returns its ```String``` representation as a hexadecimal value 
+  Reads byte sequence of defined length and returns its ```String``` representation as a hexadecimal value according to _Big Endian_ notation
 
 ### Reading a little endian value from the buffer
 
@@ -18,5 +18,6 @@ This is my set of functions to operate binary data
   readLittleigEndian(buffer, length, offset)
 ```  
 
-  Reads byte sequence of defined length and returns its ```String``` representation as a hexadecimal value 
+  Reads byte sequence of defined length and returns its ```String``` representation as a hexadecimal value  according to _Little Endian_ notation
+
 
