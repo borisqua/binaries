@@ -1,6 +1,18 @@
 "use strict";
 
 const
+  assert = require('assert')
+;
+
+describe('#BitOps()', function() {
+  describe('#indexOf()', function() {
+    it('should return -1 when the value is not present', function() {
+      assert.equal([1,2,3].indexOf(4), -1);
+    });
+  });
+});
+
+const
   BitField = require('../../main/js/bitfield'),
   bf = new BitField(15),
   BitOps = require('../../main/js/bitops')

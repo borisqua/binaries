@@ -2,6 +2,17 @@
   "name": "binaries",
   "version": "0.0.1",
   "description": "Binary functions library",
+  "keywords": [
+    "binary",
+    "buffer",
+    "endian",
+    "bits",
+    "bit",
+    "helpers",
+    "utils"
+  ],
+  "homepage": "https://github.com/borisqua/binaries",
+  "bugs": "https://github.com/borisqua/binaries/issues",
   "main": "src/main/js/index.js",
   "author": "Boris Bronovitsky",
   "license": "MIT",
@@ -9,9 +20,12 @@
     "start": "echo mbstreamer is a binary streaming library, it can't be started && exit 0",
     "test": "mocha"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/borisqua/binaries.git"
+  },
   "devDependencies": {
     "chai": "latest",
     "mocha": "latest"
   }
 }
-
