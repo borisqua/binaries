@@ -31,18 +31,18 @@ class BufferOps {
     // return Math.ceil(Math.log2(-(1 + ~(1 << bytes * 8)) / value)); //length of vInt
     // One more way to calculate length is using javascript Math.clz32(first4bytes)
     // let length2 = 8 * (bytes - 1) + Math.clz32(buffer[firstByte]) - 23;
-    //todo>> there is much much faster approach to get vInt length, this is the precalculated vector with 256 elements (i.e. 2^8 elements)
-    // that contains vectors with length equal to number of bytes of length descriptor
-    // each element of last vector keeps precalculated length of vInt for that specific length of vInt length descriptor
-    // then vInt could be expressed like something like this: {let bytes=0; while(!buffer[bytes++]); return table256[buffer[bytes]][bytes];}
-    // in that case current implementation of vInt could be used to precalculate table256 before beginning the parsing process
+    //todo>> there is much much faster approach to get vInt length, this is the precalculated vector with 256 elements
+    // This vector contains vectors with the length equal to the number of bytes of the length descriptor
+    // each element of the last vector keeps a precalculated length of a vInt for that specific length of the vInt length descriptor
+    // then a vInt could be expressed something like this: {let bytes=0; while(!buffer[bytes++]); return table256[buffer[bytes]][bytes];}
+    // in that case current implementation of the vInt function could be used to precalculate table256 before beginning the parsing process
   }
   
   /**
-   * bigEndian calculates value from buffer according to big-endian order of bytes
-   * @param {Array} buffer stream buffer or string that contains variable-length integers of EBML stream or file
-   * @param {number} length length of value in bytes
-   * @param {number} offset buffer index of the first byte of the value
+   * bigEndian calculates a value from a buffer according to the big-endian order of bytes
+   * @param {Array} buffer a stream buffer or string that contains variable-length integers of an EBML stream or file
+   * @param {number} length the length of the value in bytes
+   * @param {number} offset the buffer index of the first byte of the value
    * **/
   static bigEndian(buffer, length = buffer.length, offset = 0) {
     let exp = length - 1;
@@ -52,10 +52,10 @@ class BufferOps {
   
   // noinspection JSUnusedGlobalSymbols
   /**
-   * littleEndian calculates value from buffer according to little-endian order of bytes
-   * @param {Array} buffer stream buffer or string that contains variable-length integers of EBML stream or file
-   * @param {number} length length of value in bytes
-   * @param {number} offset buffer index of the first byte of the value
+   * littleEndian calculates a value from a buffer according to the little-endian order of bytes
+   * @param {Array} buffer a stream buffer or string that contains variable-length integers of an EBML stream or file
+   * @param {number} length the length of the value in bytes
+   * @param {number} offset the buffer index of the first byte of the value
    * **/
   static littleEndian(buffer, length, offset = 0) {
     let exp = length - 1;
