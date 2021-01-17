@@ -1,27 +1,35 @@
 # Binary functions
 
-This is my set of functions to operate with binary data
+This is my set of javaScript functions to operate with binary data
 
 ## Table of Contents
-- [Bit operations](#bitops)
-  - [BitOps.mask(n) - bit mask for n-th bit](#bitopsmask)
-  - [BitOps.check(v, n) - check n-th bit state in bit-field v](#bitopscheck)
-  - [BitOps.on(v, n, e) - set bits in bit-field v](#bitopson)
-  - [BitOps.off(v, n, e) - clear bits in bit-field v](#bitopsoff)
-  - [BitOps.switch(v, n, e) - toggle bits in bit-field v](#bitopsswitch)
-- [Binary Filed](#reading)
-- [Binary Buffer Operations](#reading)
-  - [readBigEndian(buffer, length, offset)](#readBigEndian)
-  - [readLittleEndian(buffer, length, offset)](#readBigEndian)
-  - [read64BigEndian(buffer, length, offset)](#readBigEndian)
-  - [read64LittleEndian(buffer, length, offset)](#readBigEndian)
+- [Bit operations](#bit-operations)
+  - [```BitOps.mask(n)``` - bit mask for n-th bit](#bitopsmaskn---bit-mask-for-n-th-bit)
+  - [```BitOps.check(v, n)``` - check n-th bit state in bit-field](#bitopscheckv-n---check-n-th-bit-in-a-binary-field)
+  - [```BitOps.on(v, n, e)``` - set bits in bit-field](#bitopsonv-n-e---set-bits-in-bit-field)
+  - [```BitOps.off(v, n, e)``` - clear bits in bit-field](#bitopsoffv-n-e---clear-bits-in-bit-field)
+  - [```BitOps.switch(v, n, e)``` - toggle bits in bit-field](#bitopsswitchv-n-e---toggle-bits-in-bit-field)
+  - [```BitOps.off_rightmost(v)``` - clear rightmost bit in bit-field](#bitopsoff_rightmostv---clear-rightmost-bit-in-bit-field)
+  - [```BitOps.on_rightmost(v)``` - set rightmost bit in bit-field](#bitopsonv-n-e---set-bits-in-bit-field)
+- [Binary Field](#binary-field-class)
+- [Binary buffer operations](#binary-buffer-operations)
+  - [readBigEndian(buffer, length, offset)](#)
+  - [readLittleEndian(buffer, length, offset)](#)
+  - [read64BigEndian(buffer, length, offset)](#)
+  - [read64LittleEndian(buffer, length, offset)](#)
 
-<a name="bitops"></a>
 ## Bit operations
+### ```BitOps.mask(n)``` - bit mask for n-th bit
+### ```BitOps.check(v, n)``` - check n-th bit in a binary field
+### ```BitOps.on(v, n, e)``` - set bits in bit-field
+### ```BitOps.off(v, n, e)``` - clear bits in bit-field
+### ```BitOps.switch(v, n, e)``` - toggle bits in bit-field
+### ```BitOps.off_rightmost(v)``` - clear rightmost bit in bit-field
 
-### 
-<a name="reading"></a>
-## Reading Binary Buffer
+## Binary field class
+
+## Binary buffer operations
+### Reading Binary Buffer
 
 <a name="readBigEndian"></a>
 ### readBigEndian(buffer, length, offset)
@@ -67,4 +75,3 @@ alias:
 ```JavaScript
   read64LE(buffer, offset)
 ```  
-

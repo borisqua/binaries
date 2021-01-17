@@ -121,7 +121,7 @@ describe("BitField - Binary field object methods", () => {
       assert.equal(bf.get(), Number.parseInt('10101', 2));
       assert.equal(bf.get(), 21);
       assert(bf.set(31) instanceof BitField, "should return itself");
-      assert(bf.off([1, 3]) instanceof BitField, "sould return itselr");
+      assert(bf.off([1, 3]) instanceof BitField, "should return itself");
       assert.equal(bf.get(), Number.parseInt('10101', 2));
       assert.equal(bf.get(), 21);
     });
@@ -196,7 +196,7 @@ describe("BitField - Binary field object methods", () => {
       assert.throws(() => bf.switch([1, 'a', 'c']), {"name": "TypeError"});
     });
   });
-  describe('bf.switch(startBit, endBit) - should set all bits from start to end in bit-field v eturn itself', () => {
+  describe('bf.switch(startBit, endBit) - should set all bits from start to end in bit-field v return itself', () => {
     it('should return 16 if switch bits from 3 to 0 in v=31', () => {
       assert(bf.set(31) instanceof BitField, "should return itself");
       assert(bf.switch(3, 1) instanceof BitField, "should return itself");

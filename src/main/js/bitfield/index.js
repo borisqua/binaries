@@ -22,7 +22,8 @@ class BitField {
           v = f(i);
         }
       } else if (e !== null) {
-        throw new TypeError("Error: StartBit and EndBit fields (second and third parameters) should be integers");
+        throw new TypeError("Error: StartBit and EndBit fields (the second and third parameters) should be integers, " +
+          "instead you can use array or single value as second parameter");
       } else {
         v = f(n);
       }

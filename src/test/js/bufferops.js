@@ -1,5 +1,6 @@
 "use strict";
 
+// noinspection JSUnusedLocalSymbols
 const
   assert = require('assert').strict
 ;

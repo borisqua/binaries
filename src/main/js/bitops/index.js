@@ -91,6 +91,7 @@ class BitOps {
   static right_propagate_rightmost1(v) {
     return v | (v - 1);
   }
+  
 }
 
 module.exports = BitOps;
