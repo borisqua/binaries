@@ -20,16 +20,23 @@ This is my set of javaScript functions to operate with binary data
 
 ## Bit operations
 ### ```BitOps.mask(n)``` - bit mask for n-th bit
+[Back to contents](#table-of-contents)
 ### ```BitOps.check(v, n)``` - check n-th bit in a binary field
+[Back to contents](#table-of-contents)
 ### ```BitOps.on(v, n, e)``` - set bits in bit-field
+[Back to contents](#table-of-contents)
 ### ```BitOps.off(v, n, e)``` - clear bits in bit-field
+[Back to contents](#table-of-contents)
 ### ```BitOps.switch(v, n, e)``` - toggle bits in bit-field
+[Back to contents](#table-of-contents)
 ### ```BitOps.off_rightmost(v)``` - clear rightmost bit in bit-field
+[Back to contents](#table-of-contents)
 
 ## Binary field class
 
 ## Binary buffer operations
 ### Reading Binary Buffer
+[Back to contents](#table-of-contents)
 
 <a name="readBigEndian"></a>
 ### readBigEndian(buffer, length, offset)
@@ -42,6 +49,7 @@ alias:
 ```  
 
 Reads byte sequence of defined ```length``` and returns its ```String``` representation as a hexadecimal value according to _Big Endian_ notation
+[Back to contents](#table-of-contents)
 
 ### readLittleEndian(buffer, length, offset)
 
@@ -55,6 +63,7 @@ alias:
 Reads byte sequence of defined length and returns its ```String``` representation as a hexadecimal value  according to _Little Endian_ notation
 
 Reads 64 bytes sequence of defined length and returns its ```String``` representation as a hexadecimal value  according to _Little Endian_ notation
+[Back to contents](#table-of-contents)
 
 ### read64BigEndian(buffer, offset)
 
@@ -66,6 +75,7 @@ alias:
 ```  
 
   Reads byte sequence of defined length and returns its ```String``` representation as a hexadecimal value  according to _Little Endian_ notation
+  [Back to contents](#table-of-contents)
 
 ### read64LittleEndian(buffer, offset)
 
@@ -75,3 +85,4 @@ alias:
 ```JavaScript
   read64LE(buffer, offset)
 ```  
+[Back to contents](#table-of-contents)
