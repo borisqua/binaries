@@ -5,7 +5,7 @@ class BitField {
     if (!(Number.isInteger(value))) {
       throw new TypeError("Error: Bit field should be an integer number");
     }
-    this.v = value;
+    this.value = value;
     
     //private
     this._op = (f, v, n, e = null) => {
@@ -27,27 +27,31 @@ class BitField {
       } else {
         v = f(n);
       }
-      this.v = v;
+      this.value = v;
       return this;
     };
-    this._on = n => this.v |= this.mask(n);
-    this._off = n => this.v &= ~this.mask(n);
-    this._switch = n => this.v ^= this.mask(n);
+    this._on = n => this.value |= this.mask(n);
+    this._off = n => this.value &= ~this.mask(n);
+    this._switch = n => this.value ^= this.mask(n);
     
     //public
     this.mask = n => {
       if (!(Number.isInteger(n))) {
         throw new TypeError("Error: Bit position should be an integer number");
       }
-      return 1 << n;
+      return this(1 << n);
     }
-    this.bit = n => this.v & this.mask(n);
-    this.on = (n, e = null) => this._op(this._on, this.v, n, e);
-    this.off = (n, e = null) => this._op(this._off, this.v, n, e);
-    this.switch = (n, e = null) => this._op(this._switch, this.v, n, e);
-    this.get = () => this.v;
+    this.bit = n => this.value & this.mask(n);
+    this.on = (n, e = null) => this._op(this._on, this.value, n, e);
+    this.off = (n, e = null) => this._op(this._off, this.value, n, e);
+    this.switch = (n, e = null) => this._op(this._switch, this.value, n, e);
+    this.off_rightmost1 = v => v & (v - 1);
+    this.on_rightmost0 = v => v | (v + 1);
+    this.isolate_rightmost1 = v => v & (-v);
+    this.isolate_rightmost0 = v => ~v & (v + 1);
+    this.get = () => this.value;
     this.set = v => {
-      this.v = v;
+      this.value = v;
       return this;
     }
   }

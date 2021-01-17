@@ -213,5 +213,35 @@ describe('BitOps - Bit operations static functions library', () => {
       assert.throws(() => BitOps.switch('v', 'b', 'c'), {"name": "TypeError"});
     });
   });
+  describe('BitOps.off_rightmost1(v) - should clear the rightmost set bit in the field v', () => {
+    it('should return b11000 (d24) if the rightmost set bit will be turned off in the binary field b11100 (d28)', () => {
+      assert.equal(BitOps.off_rightmost1(Number.parseInt('11100', 2)), Number.parseInt('11000', 2));
+      assert.equal(BitOps.off_rightmost1(28), 24);
+    });
+  });
+  describe('BitOps.on_rightmost1(v) - should set the rightmost clear bit in the field v', () => {
+    it('should return b11011 (d27) if the rightmost set bit will be turned off in the binary field b11001 (d25)', () => {
+      assert.equal(BitOps.on_rightmost0(Number.parseInt('11001', 2)), Number.parseInt('11011', 2));
+      assert.equal(BitOps.on_rightmost0(25), 27);
+    });
+  });
+  describe('BitOps.isolate_rightmost1(v) - should return binary field with only one set bit, one that was rightmost set in the field v', () => {
+    it('should return b00100 (d4) if the rightmost set bit will be turned off in the binary field b11100 (d28)', () => {
+      assert.equal(BitOps.isolate_rightmost1(Number.parseInt('11100', 2)), Number.parseInt('00100', 2));
+      assert.equal(BitOps.isolate_rightmost1(28), 4);
+    });
+  });
+  describe('BitOps.isolate_rightmost0(v) - should return binary field with only one set bit, one that was rightmost clear in the field v', () => {
+    it('should return b00010 (d24) if the rightmost set bit will be turned off in the binary field b11001 (d28)', () => {
+      assert.equal(BitOps.isolate_rightmost0(Number.parseInt('11101', 2)), Number.parseInt('00010', 2));
+      assert.equal(BitOps.isolate_rightmost0(25), 2);
+    });
+  });
+  describe('BitOps.right_propagate_rightmost1(v) - should return binary field with all bits set after rightmost set bit in the field v', () => {
+    it('should return b00111 (d7) if the rightmost set bit will be turned off in the binary field b00100 (d4)', () => {
+      assert.equal(BitOps.right_propagate_rightmost1(Number.parseInt('00100', 2)), Number.parseInt('00111', 2));
+      assert.equal(BitOps.right_propagate_rightmost1(4), 7);
+    });
+  });
 });
 

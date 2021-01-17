@@ -9,8 +9,9 @@ This is my set of javaScript functions to operate with binary data
   - [```BitOps.on(v, n, e)``` - set bits in bit-field](#bitopsonv-n-e---set-bits-in-bit-field)
   - [```BitOps.off(v, n, e)``` - clear bits in bit-field](#bitopsoffv-n-e---clear-bits-in-bit-field)
   - [```BitOps.switch(v, n, e)``` - toggle bits in bit-field](#bitopsswitchv-n-e---toggle-bits-in-bit-field)
-  - [```BitOps.off_rightmost(v)``` - clear rightmost bit in bit-field](#bitopsoff_rightmostv---clear-rightmost-bit-in-bit-field)
-  - [```BitOps.on_rightmost(v)``` - set rightmost bit in bit-field](#bitopsonv-n-e---set-bits-in-bit-field)
+  - [```BitOps.isolate_rightmost1(v)``` - isolate a rightmost set bit in bit-field](#bitopsisolate_rightmost1v---isolate-a-rightmost-set-bit-in-bit-field)
+  - [```BitOps.isolate_rightmost0(v)``` - isolate a rightmost clear bit in bit-field](#bitopsisolate_rightmost0v---isolate-a-rightmost-clear-bit-in-bit-field)
+  - [```BitOps.right_propagate_rightmost1(v)``` - propagate a rightmost set bit in bit-field](#bitopsright_propagate_rightmost1v---propagate-a-rightmost-set-bit-in-bit-field)
 - [Binary Field](#binary-field-class)
 - [Binary buffer operations](#binary-buffer-operations)
   - [readBigEndian(buffer, length, offset)](#)
@@ -29,7 +30,15 @@ This is my set of javaScript functions to operate with binary data
 [Back to contents](#table-of-contents)
 ### ```BitOps.switch(v, n, e)``` - toggle bits in bit-field
 [Back to contents](#table-of-contents)
-### ```BitOps.off_rightmost(v)``` - clear rightmost bit in bit-field
+### ```BitOps.off_rightmost(v)``` - clear a rightmost bit in bit-field
+[Back to contents](#table-of-contents)
+### ```BitOps.on_rightmost(v)``` - set a rightmost bit in bit-field
+[Back to contents](#table-of-contents)
+### ```BitOps.isolate_rightmost1(v)``` - isolate a rightmost set bit in bit-field
+[Back to contents](#table-of-contents)
+### ```BitOps.isolate_rightmost0(v)``` - isolate a rightmost clear bit in bit-field
+[Back to contents](#table-of-contents)
+### ```BitOps.right_propagate_rightmost1(v)``` - propagate a rightmost set bit in bit-field
 [Back to contents](#table-of-contents)
 
 ## Binary field class
