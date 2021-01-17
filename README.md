@@ -5,13 +5,13 @@ This is my set of javaScript functions to operate with binary data
 ## Table of Contents
 - [Bit operations](#bit-operations)
   - [```BitOps.mask(n)``` - bit mask for n-th bit](#bitopsmaskn---bit-mask-for-n-th-bit)
-  - [```BitOps.check(v, n)``` - check n-th bit state in bit-field](#bitopscheckv-n---check-n-th-bit-in-a-binary-field)
-  - [```BitOps.on(v, n, e)``` - set bits in bit-field](#bitopsonv-n-e---set-bits-in-bit-field)
-  - [```BitOps.off(v, n, e)``` - clear bits in bit-field](#bitopsoffv-n-e---clear-bits-in-bit-field)
-  - [```BitOps.switch(v, n, e)``` - toggle bits in bit-field](#bitopsswitchv-n-e---toggle-bits-in-bit-field)
-  - [```BitOps.isolate_rightmost1(v)``` - isolate a rightmost set bit in bit-field](#bitopsisolate_rightmost1v---isolate-a-rightmost-set-bit-in-bit-field)
-  - [```BitOps.isolate_rightmost0(v)``` - isolate a rightmost clear bit in bit-field](#bitopsisolate_rightmost0v---isolate-a-rightmost-clear-bit-in-bit-field)
-  - [```BitOps.right_propagate_rightmost1(v)``` - propagate a rightmost set bit in bit-field](#bitopsright_propagate_rightmost1v---propagate-a-rightmost-set-bit-in-bit-field)
+  - [```BitOps.check(v, n)``` - check n-th bit state in a bit-field](#bitopscheckv-n---check-n-th-bit-in-a-binary-field)
+  - [```BitOps.on(v, n, e)``` - set bits in a bit-field](#bitopsonv-n-e---set-bits-in-bit-field)
+  - [```BitOps.off(v, n, e)``` - clear bits in a bit-field](#bitopsoffv-n-e---clear-bits-in-bit-field)
+  - [```BitOps.switch(v, n, e)``` - toggle bits in a bit-field](#bitopsswitchv-n-e---toggle-bits-in-bit-field)
+  - [```BitOps.isolate_rightmost1(v)``` - isolate a rightmost set bit in a bit-field](#bitopsisolate_rightmost1v---isolate-a-rightmost-set-bit-in-bit-field)
+  - [```BitOps.isolate_rightmost0(v)``` - isolate a rightmost clear bit in a bit-field](#bitopsisolate_rightmost0v---isolate-a-rightmost-clear-bit-in-bit-field)
+  - [```BitOps.right_propagate_rightmost1(v)``` - propagate a rightmost set bit in a bit-field](#bitopsright_propagate_rightmost1v---propagate-a-rightmost-set-bit-in-bit-field)
 - [Binary Field](#binary-field-class)
 - [Binary buffer operations](#binary-buffer-operations)
   - [readBigEndian(buffer, length, offset)](#)
@@ -24,21 +24,21 @@ This is my set of javaScript functions to operate with binary data
 [Back to contents](#table-of-contents)
 ### ```BitOps.check(v, n)``` - check n-th bit in a binary field
 [Back to contents](#table-of-contents)
-### ```BitOps.on(v, n, e)``` - set bits in bit-field
+### ```BitOps.on(v, n, e)``` - set bits in a bit-field
 [Back to contents](#table-of-contents)
-### ```BitOps.off(v, n, e)``` - clear bits in bit-field
+### ```BitOps.off(v, n, e)``` - clear bits in a bit-field
 [Back to contents](#table-of-contents)
-### ```BitOps.switch(v, n, e)``` - toggle bits in bit-field
+### ```BitOps.switch(v, n, e)``` - toggle bits in a bit-field
 [Back to contents](#table-of-contents)
-### ```BitOps.off_rightmost(v)``` - clear a rightmost bit in bit-field
+### ```BitOps.off_rightmost(v)``` - clear a rightmost bit in a bit-field
 [Back to contents](#table-of-contents)
-### ```BitOps.on_rightmost(v)``` - set a rightmost bit in bit-field
+### ```BitOps.on_rightmost(v)``` - set a rightmost bit in a bit-field
 [Back to contents](#table-of-contents)
-### ```BitOps.isolate_rightmost1(v)``` - isolate a rightmost set bit in bit-field
+### ```BitOps.isolate_rightmost1(v)``` - isolate a rightmost set bit in a bit-field
 [Back to contents](#table-of-contents)
-### ```BitOps.isolate_rightmost0(v)``` - isolate a rightmost clear bit in bit-field
+### ```BitOps.isolate_rightmost0(v)``` - isolate a rightmost clear bit in a bit-field
 [Back to contents](#table-of-contents)
-### ```BitOps.right_propagate_rightmost1(v)``` - propagate a rightmost set bit in bit-field
+### ```BitOps.right_propagate_rightmost1(v)``` - propagate a rightmost set bit in a bit-field
 [Back to contents](#table-of-contents)
 
 ## Binary field class
