@@ -3,7 +3,7 @@
 This is my set of JavaScript functions to deal with binary values
 
 ## Table of Contents
-- [`BitOps` static bit operations library](#bit-operations)
+- [`BitOps` static bit operations library](#bitops-static-bit-operations-library)
   - [```BitOps.mask(n)``` - bit mask for n-th bit](#bitopsmaskn---bit-mask-for-n-th-bit)
   - [```BitOps.check(v, n)``` - check n-th bit state in a bit-field](#bitopscheckv-n---check-n-th-bit-in-a-binary-field)
   - [```BitOps.on(v, n, e)``` - set bits in a bit-field](#bitopsonv-n-e---set-bits-in-bit-field)
