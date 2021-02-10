@@ -19,7 +19,9 @@ This is my set of JavaScript functions to deal with binary values
   - [read64BigEndian(buffer, length, offset)](#read64bigendianbuffer-offset)
   - [read64LittleEndian(buffer, length, offset)](#read64littleendianbuffer-offset)
 
-## Bit operations
+## `BitOps` static bit operations library
+The set of static methods to deal with bits in a binary field 
+
 ### ```BitOps.mask(n)``` - bit mask for n-th bit
 Returns integer bit mask for the *n*-th bit in the field
 
