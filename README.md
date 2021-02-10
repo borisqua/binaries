@@ -21,24 +21,59 @@ This is my set of javaScript functions to operate with binary data
 
 ## Bit operations
 ### ```BitOps.mask(n)``` - bit mask for n-th bit
+Returns bit mask for the *n*-th bit in the field
+
 [Back to contents](#table-of-contents)
 ### ```BitOps.check(v, n)``` - check n-th bit in a binary field
+Checks if *n*-th bit in the field *v* is set
+
 [Back to contents](#table-of-contents)
 ### ```BitOps.on(v, n, e)``` - set bits in a bit-field
+This function has three versions:
+- BitOps(v,n), where *n* - is an bit index: sets on *n*-th bit in the *v* binary field;
+- BitOps(v,n), where *n* - ia an array of bit indexes: 
+  sets on each bit with an index from the *n* array in the *v* binary field;
+- BitOps(v,n,e), where *n* - is a start index, and *e* - an end index:
+  sets on each bit in the *v* binary field, from *n*-th to *e*-th bits inclusive;
+
 [Back to contents](#table-of-contents)
 ### ```BitOps.off(v, n, e)``` - clear bits in a bit-field
+This function has three versions:
+- BitOps(v,n), where *n* - is an bit index: sets off *n*-th bit in the *v* binary field;
+- BitOps(v,n), where *n* - ia an array of bit indexes:
+  sets off each bit with an index from the *n* array in the *v* binary field;
+- BitOps(v,n,e), where *n* - is a start index, and *e* - an end index:
+  sets off each bit in the *v* binary field, from *n*-th to *e*-th bits inclusive;
+  
 [Back to contents](#table-of-contents)
 ### ```BitOps.switch(v, n, e)``` - toggle bits in a bit-field
+This function has three versions:
+- BitOps(v,n), where *n* - is an bit index: switches *n*-th bit in the *v* binary field;
+- BitOps(v,n), where *n* - ia an array of bit indexes:
+  switches each bit with an index from the *n* array in the *v* binary field;
+- BitOps(v,n,e), where *n* - is a start index, and *e* - an end index:
+  switches each bit in the *v* binary field, from *n*-th to *e*-th bits inclusive;
+
 [Back to contents](#table-of-contents)
 ### ```BitOps.off_rightmost(v)``` - clear a rightmost bit in a bit-field
+Sets off the rightmost bit in the field *v*
+
 [Back to contents](#table-of-contents)
 ### ```BitOps.on_rightmost(v)``` - set a rightmost bit in a bit-field
+Sets on the rightmost bit in the field *v*
+
 [Back to contents](#table-of-contents)
 ### ```BitOps.isolate_rightmost1(v)``` - isolate a rightmost set bit in a bit-field
+Isolates the rightmost set to 1 bit in the field *v*
+
 [Back to contents](#table-of-contents)
 ### ```BitOps.isolate_rightmost0(v)``` - isolate a rightmost clear bit in a bit-field
+Isolates the rightmost set to 0 bit in the field *v*
+
 [Back to contents](#table-of-contents)
 ### ```BitOps.right_propagate_rightmost1(v)``` - propagate a rightmost set bit in a bit-field
+Propagate the rightmost set to 1 bit to the right bound of the field *v*
+
 [Back to contents](#table-of-contents)
 
 ## Binary field class
