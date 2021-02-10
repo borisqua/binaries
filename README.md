@@ -1,4 +1,4 @@
-# Binary operations package
+# Binary operations js package
 
 This is my set of javaScript functions to operate with binary data
 
