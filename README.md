@@ -1,6 +1,6 @@
 # Binary operations js package
 
-This is my set of javaScript functions to operate with binary data
+This is my set of JavaScript functions to deal with binary values
 
 ## Table of Contents
 - [`BitOps` static bit operations library](#bit-operations)
