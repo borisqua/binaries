@@ -39,7 +39,7 @@ class BitField {
       if (!(Number.isInteger(n))) {
         throw new TypeError("Error: Bit position should be an integer number");
       }
-      return this(1 << n);
+      return 1 << n;
     }
     this.bit = n => this.value & this.mask(n);
     this.on = (n, e = null) => this._op(this._on, this.value, n, e);

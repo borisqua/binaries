@@ -26,16 +26,16 @@ describe("BitField - Binary field object methods", () => {
       assert.equal(bf.mask(0)/*bit 0 set to 1*/, Number.parseInt('00001', 2));
     });
     it('should return 2 when n=1 -> [..0010bin] = 2dec', () => {
-      assert.equal(bf.mask(1)/*bit 0 set to 1*/, Number.parseInt('00010', 2));
+      assert.equal(bf.mask(1)/*bit 1 set to 1*/, Number.parseInt('00010', 2));
     });
     it('should return 4 when n=2 -> [..0100bin] = 4dec', () => {
-      assert.equal(bf.mask(2)/*bit 0 set to 1*/, Number.parseInt('00100', 2));
+      assert.equal(bf.mask(2)/*bit 2 set to 1*/, Number.parseInt('00100', 2));
     });
     it('should return 8 when n=3 -> [..1000bin] = 8dec', () => {
-      assert.equal(bf.mask(3)/*bit 0 set to 1*/, Number.parseInt('01000', 2));
+      assert.equal(bf.mask(3)/*bit 3 set to 1*/, Number.parseInt('01000', 2));
     });
     it('should return 16 when n=4 -> [.10000bin] = 16dec', () => {
-      assert.equal(bf.mask(4)/*bit 0 set to 1*/, Number.parseInt('10000', 2));
+      assert.equal(bf.mask(4)/*bit 4 set to 1*/, Number.parseInt('10000', 2));
     });
     it('should throw an error if n is not a number', () => {
       assert.throws(() => bf.mask('a'), {"name": "TypeError"});
@@ -43,7 +43,8 @@ describe("BitField - Binary field object methods", () => {
   });
   describe('bf.bit(n) - should return _true_ if n-th bit of the bf is set and _false_ otherwise', () => {
     it('should return true when n=0 -> [010101]', () => {
-      assert(bf.bit(0), "first bit in 2dec=10bin should be set");
+      bf.set(21);
+      assert(bf.bit(0), "first bit in 21dec=010101bin should be set");
     });
     it('should return false when n=1 -> [010101]', () => {
       assert(!bf.bit(1), "second bit in 21dec shouldn't be set");

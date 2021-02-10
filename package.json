@@ -17,7 +17,7 @@
   "author": "Boris Bronovitsky",
   "license": "MIT",
   "scripts": {
-    "start": "echo mbstreamer is a binary streaming library, it can't be started && exit 0",
+    "start": "echo \"mbstreamer is a binary streaming library, it can't be started\"",
     "test": "mocha src/test/**/*.js"
   },
   "repository": {
