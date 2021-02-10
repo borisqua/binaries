@@ -105,13 +105,14 @@ Returns modified field *v*.
 [Back to contents](#table-of-contents)
 
 ## `BitField` binary field class
-Do the same operations as BitOps static methods do, but operates like an object:
-modifies and returns itself, so the functional style operations chains can be built.
+Do the same operations as the BitOps static methods do, but operates like an object:
+modifies and returns itself, so it can build the functional style operations chains.
 
 [Back to contents](#table-of-contents)
 
 ## Binary buffer operations
 ### Reading Binary Buffer
+
 [Back to contents](#table-of-contents)
 
 ### readBigEndian(buffer, length, offset)
