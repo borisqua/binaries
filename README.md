@@ -37,14 +37,14 @@ This is my set of JavaScript functions to deal with binary values
 The set of static methods to deal with bits in a binary field 
 
 ### `BitOps.mask(n)` - bit mask for n-th bit
-Returns *Number* equal to bit mask for the *n*-th bit in the field
+Returns a *Number* equal to the bit mask for the *n*-th bit in the field
 
 [Back to contents](#table-of-contents)
 
 ### `BitOps.bit(v, n)` - check n-th bit in a binary field
 Checks if *n*-th bit in the field *v* is set on. 
 
-Returns *Boolean*: *true* if it is, or *false* otherwise.
+Returns a *Boolean*: *true* if it is, or *false* otherwise.
 
 [Back to contents](#table-of-contents)
 
@@ -56,7 +56,7 @@ This function has three signatures:
 - `BitOps.on(v,n,e)`, where *n* is a start index and *e* is an end index:
   sets each bit, in the *v* binary field from *n*-th to *e*-th bits inclusive, on;
   
-Returns *Number* equal to modified field *v*.
+Returns a *Number* equal to modified field *v*.
 
 [Back to contents](#table-of-contents)
 
@@ -68,7 +68,7 @@ This function has three signatures:
 - `BitOps.off(v,n,e)`, where *n* is a start index, and *e* is an end index:
   sets each bit, in the *v* binary field from *n*-th to *e*-th bits inclusive, off;
 
-Returns *Number* equal to modified field *v*.
+Returns a *Number* equal to modified field *v*.
 
 [Back to contents](#table-of-contents)
 
@@ -80,42 +80,42 @@ This function has three signatures:
 - `BitOps.switch(v,n,e)`, where *n* - is a start index, and *e* - an end index:
   switches each bit in the *v* binary field, from *n*-th to *e*-th bits inclusive;
 
-Returns *Number* equal to modified field *v*.
+Returns a *Number* equal to modified field *v*.
 
 [Back to contents](#table-of-contents)
 
 ### `BitOps.off_rightmost(v)` - clear a rightmost bit in a bit-field
 Sets off the rightmost bit in the field *v*
 
-Returns *Number* equal to modified field *v*.
+Returns a *Number* equal to modified field *v*.
 
 [Back to contents](#table-of-contents)
 
 ### `BitOps.on_rightmost(v)` - set a rightmost bit in a bit-field
 Sets on the rightmost bit in the field *v*
 
-Returns *Number* equal to modified field *v*.
+Returns a *Number* equal to modified field *v*.
 
 [Back to contents](#table-of-contents)
 
 ### `BitOps.isolate_rightmost1(v)` - isolate a rightmost set bit in a bit-field
 Isolates the rightmost set to 1 bit in the field *v*
 
-Returns *Number* equal to modified field *v*.
+Returns a *Number* equal to modified field *v*.
 
 [Back to contents](#table-of-contents)
 
 ### `BitOps.isolate_rightmost0(v)` - isolate a rightmost clear bit in a bit-field
 Isolates the rightmost set to 0 bit in the field *v*
 
-Returns *Number* equal to modified field *v*.
+Returns a *Number* equal to modified field *v*.
 
 [Back to contents](#table-of-contents)
 
 ### `BitOps.right_propagate_rightmost1(v)` - propagate a rightmost set bit in a bit-field
 Propagate the rightmost set to 1 bit to the right bound of the field *v*
 
-Returns *Number* equal to modified field *v*.
+Returns a *Number* equal to modified field *v*.
 
 [Back to contents](#table-of-contents)
 
@@ -134,7 +134,7 @@ bit field value.
 [Back to contents](#table-of-contents)
 
 ### `get()` - returns the value of the BitField object
-Returns *Number* equal to the *value* property of the bit field object;
+Returns a *Number* equal to the *value* property of the bit field object;
 
 [Back to contents](#table-of-contents)
 
@@ -147,14 +147,14 @@ Returns the reference to itself.
 [Back to contents](#table-of-contents)
 
 ### `mask(n)` - bit mask for n-th bit
-Returns the *Number* equal to bit mask for the *n*-th bit in the field value
+Returns a *Number* equal to bit mask for the *n*-th bit in the field value
 
 [Back to contents](#table-of-contents)
 
 ### `bit(n)` - check n-th bit in a bit field
 Checks if *n*-th bit in the field is set on.
 
-Returns *Boolean*: *true* if it is, or *false* otherwise.
+Returns a *Boolean*: *true* if it is, or *false* otherwise.
 
 [Back to contents](#table-of-contents)
 
