@@ -19,7 +19,8 @@ class BufferOps {
       vIntAlignmentLength = Math.floor(Math.log2(buffer[firstByte])),
       vIntFullLength = 8 * bytes - vIntAlignmentLength, // vInt full length in bytes === number of bits of vInt descriptor
       valueBuffer = buffer.slice(firstByte, firstByte + vIntFullLength - bytes + 1);
-    valueBuffer[0] = valueBuffer[0] & (Math.pow(2, vIntAlignmentLength) - 1);
+    valueBuffer[0] = valueBuffer[0] & (2 << vIntAlignmentLength - 1);
+    // valueBuffer[0] = valueBuffer[0] & (Math.pow(2, vIntAlignmentLength) - 1);
     // valueBuffer[0] = valueBuffer[0] & (Math.pow(2, 8 - vIntFullLength + (bytes - 1) * 8) - 1);
     return {
       start: offset,//firstByte,

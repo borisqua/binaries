@@ -25,10 +25,9 @@ This is my set of JavaScript functions to deal with binary values
   - [`isolate_rightmost0()` - isolate a rightmost clear bit in a bit field](#isolate_rightmost0---isolate-a-rightmost-clear-bit-in-a-bit-field)
   - [`right_propagate_rightmost1()` - propagate a rightmost set bit in a bit field](#right_propagate_rightmost1---propagate-a-rightmost-set-bit-in-a-bit-field)
 - [Binary buffer operations](#binary-buffer-operations)
-  - [readBigEndian(buffer, length, offset)](#readbigendianbuffer-length-offset)
-  - [readLittleEndian(buffer, length, offset)](#read64littleendianbuffer-offset)
-  - [read64BigEndian(buffer, length, offset)](#read64bigendianbuffer-offset)
-  - [read64LittleEndian(buffer, length, offset)](#read64littleendianbuffer-offset)
+  - [readBigEndian(buffer, length, offset)](#variable-length-int-vintbuffer-offset)
+  - [readLittleEndian(buffer, length, offset)](#big-endian-value-bigendianbuffer-length-offset)
+  - [read64BigEndian(buffer, length, offset)](#little-endian-value-littleendianbuffer-length-offset)
 
 
 ## `BitOps` static bit operations library
@@ -50,10 +49,10 @@ Returns a *Boolean*: *true* if it is, or *false* otherwise.
 
 ### `BitOps.on(v, n, e)` - set bits in a bit-field
 This function has three signatures:
-- `BitOps.on(v,n)`, where *n* is a bit index: sets *n*-th bit, in the *v* binary field, on;
-- `BitOps.on(v,n)`, where *n* is an array of bit indexes: 
+- `BitOps.on(v,n)` here *n* is a bit index: sets *n*-th bit, in the *v* binary field, on;
+- `BitOps.on(v,n)` here *n* is an array of bit indexes: 
   sets each bit, with an index from the *n* array in the *v* binary field, on;
-- `BitOps.on(v,n,e)`, where *n* is a start index and *e* is an end index:
+- `BitOps.on(v,n,e)` here *n* is a start index and *e* is an end index:
   sets each bit, in the *v* binary field from *n*-th to *e*-th bits inclusive, on;
   
 Returns a *Number* equal to modified field *v*.
@@ -62,10 +61,10 @@ Returns a *Number* equal to modified field *v*.
 
 ### `BitOps.off(v, n, e)` - clear bits in a bit-field
 This function has three signatures:
-- `BitOps.off(v,n)`, where *n* is a bit index: sets *n*-th bit, in the *v* binary field, off;
-- `BitOps.off(v,n)`, where *n* is an array of bit indexes:
+- `BitOps.off(v,n)` here *n* is a bit index: sets *n*-th bit, in the *v* binary field, off;
+- `BitOps.off(v,n)` here *n* is an array of bit indexes:
   sets each bit, with an index from the *n* array in the *v* binary field, off;
-- `BitOps.off(v,n,e)`, where *n* is a start index, and *e* is an end index:
+- `BitOps.off(v,n,e)` here *n* is a start index, and *e* is an end index:
   sets each bit, in the *v* binary field from *n*-th to *e*-th bits inclusive, off;
 
 Returns a *Number* equal to modified field *v*.
@@ -74,10 +73,10 @@ Returns a *Number* equal to modified field *v*.
 
 ### `BitOps.switch(v, n, e)` - toggle bits in a bit-field
 This function has three signatures:
-- `BitOps.switch(v,n)`, where *n* - is an bit index: switches *n*-th bit in the *v* binary field;
-- `BitOps.switch(v,n)`, where *n* - ia an array of bit indexes:
+- `BitOps.switch(v,n)` here *n* - is an bit index: switches *n*-th bit in the *v* binary field;
+- `BitOps.switch(v,n)` here *n* - ia an array of bit indexes:
   switches each bit with an index from the *n* array in the *v* binary field;
-- `BitOps.switch(v,n,e)`, where *n* - is a start index, and *e* - an end index:
+- `BitOps.switch(v,n,e)` here *n* - is a start index, and *e* - an end index:
   switches each bit in the *v* binary field, from *n*-th to *e*-th bits inclusive;
 
 Returns a *Number* equal to modified field *v*.
@@ -160,10 +159,10 @@ Returns a *Boolean*: *true* if it is, or *false* otherwise.
 
 ### `on(n, e)` - set bits in a bit-field
 This function has three signatures:
-- `on(n)`, where *n* is a bit index: sets *n*-th bit, in the bit field, on;
-- `on(n)`, where *n* is an array of bit indexes:
+- `on(n)` here *n* is a bit index: sets *n*-th bit, in the bit field, on;
+- `on(n)` here *n* is an array of bit indexes:
   sets each bit, with an index from the *n* array in the bit field, on;
-- `on(n,e)`, where *n* is a start index and *e* is an end index:
+- `on(n,e)` here *n* is a start index and *e* is an end index:
   sets each bit, in the bit field from *n*-th to *e*-th bits inclusive, on;
 
 Returns the reference to itself.
@@ -172,10 +171,10 @@ Returns the reference to itself.
 
 ### `off(n, e)` - clear bits in a bit-field
 This function has three signatures:
-- `off(n)`, where *n* is a bit index: sets *n*-th bit, in the bit field, off;
-- `off(n)`, where *n* is an array of bit indexes:
+- `off(n)` here *n* is a bit index: sets *n*-th bit, in the bit field, off;
+- `off(n)` here *n* is an array of bit indexes:
   sets each bit, with an index from the *n* array in the bit field, off;
-- `off(n,e)`, where *n* is a start index and *e* is an end index:
+- `off(n,e)` here *n* is a start index and *e* is an end index:
   sets each bit, in the bit field from *n*-th to *e*-th bits inclusive, off;
 
 Returns the reference to itself.
@@ -184,10 +183,10 @@ Returns the reference to itself.
 
 ### `switch(n, e)` - toggle bits in a bit-field
 This function has three signatures:
-- `switch(n)`, where *n* is a bit index: switches *n*-th bit, in the bit field;
-- `switch(n)`, where *n* is an array of bit indexes:
+- `switch(n)` here *n* is a bit index: switches *n*-th bit, in the bit field;
+- `switch(n)` here *n* is an array of bit indexes:
   switches each bit, with an index from the *n* array in the bit field;
-- `switch(n,e)`, where *n* is a start index and *e* is an end index:
+- `switch(n,e)` here *n* is a start index and *e* is an end index:
   switches each bit, in the bit field from *n*-th to *e*-th bits inclusive;
 
 Returns the reference to itself.
@@ -232,56 +231,29 @@ Returns the reference to itself.
 ## Binary buffer operations
 
 ---
-### Reading Binary Buffer
+### Variable length int 'vInt(buffer, offset)'
+
+Calculates length, value and uint8 buffer of variable-length integer
 
 [Back to contents](#table-of-contents)
 
-### readBigEndian(buffer, length, offset)
+### Big endian value `bigEndian(buffer, length, offset)`
+Reads a big endian value of size `length` from `buffer` with offset `offset`
+Calculates a value from a buffer according to the big-endian order of bytes
 
-Reading a big endian value of size ```length``` from ```buffer``` with offset ```offset```
+Returns *String* representation as a hexadecimal value according to 
+Big Endian notation
 
-alias:
-```JavaScript
-  readBE(buffer, length, offset)
-```  
-
-Reads byte sequence of defined ```length``` and returns its ```String``` representation as a hexadecimal value according to _Big Endian_ notation
 [Back to contents](#table-of-contents)
 
-### readLittleEndian(buffer, length, offset)
+### Little endian value `littleEndian(buffer, length, offset)`
+Reads a little endian value of size ```length``` from the ```buffer``` with offset ```offset```
+Calculates a value from a buffer according to the little-endian order of bytes
 
-Reading a little endian value of size ```length``` from the ```buffer``` with offset ```offset```
+Returns *String* representation as a hexadecimal value according to 
+Little Endian notation
 
-alias:
-```JavaScript
-  readLE(buffer, length, offset)
-```  
-
-Reads byte sequence of defined length and returns its ```String``` representation as a hexadecimal value  according to _Little Endian_ notation
-
-Reads 64 bytes sequence of defined length and returns its ```String``` representation as a hexadecimal value  according to _Little Endian_ notation
 [Back to contents](#table-of-contents)
 
-### read64BigEndian(buffer, offset)
-
-Reading a big endian 64 bit value from the buffer
-
-alias:
-```JavaScript
-  read64BE(buffer, offset)
-```  
-
-Reads byte sequence of defined length and returns its ```String``` representation as a hexadecimal value  according to _Little Endian_ notation
-[Back to contents](#table-of-contents)
-
-### read64LittleEndian(buffer, offset)
-
-Reading a little endian 64 bit value from the buffer
-
-alias:
-```JavaScript
-  read64LE(buffer, offset)
-```  
-[Back to contents](#table-of-contents)
 
 
