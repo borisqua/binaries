@@ -30,7 +30,10 @@ This is my set of JavaScript functions to deal with binary values
   - [read64BigEndian(buffer, length, offset)](#read64bigendianbuffer-offset)
   - [read64LittleEndian(buffer, length, offset)](#read64littleendianbuffer-offset)
 
+
 ## `BitOps` static bit operations library
+
+---
 The set of static methods to deal with bits in a binary field 
 
 ### `BitOps.mask(n)` - bit mask for n-th bit
@@ -117,10 +120,9 @@ Returns *Number* equal to modified field *v*.
 
 [Back to contents](#table-of-contents)
 
-***
-___
-
 ## `BitField` binary field class
+
+---
 Do the same operations as the BitOps static methods do, but operates like an object:
 modifies and returns itself, so it can build the functional style operations chains.
 
@@ -229,6 +231,8 @@ Returns the reference to itself.
 [Back to contents](#table-of-contents)
 
 ## Binary buffer operations
+
+---
 ### Reading Binary Buffer
 
 [Back to contents](#table-of-contents)
@@ -280,3 +284,5 @@ alias:
   read64LE(buffer, offset)
 ```  
 [Back to contents](#table-of-contents)
+
+
