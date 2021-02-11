@@ -23,21 +23,18 @@ class BitOps {
     }
     return v;
   };
-  
   static _on(v, n) {
     if (!(Number.isInteger(v))) {
       throw new TypeError("Error: Bit field (first parameter) should be an integer number");
     }
     return v | BitOps.mask(n);
   }
-  
   static _off(v, n) {
     if (!(Number.isInteger(v))) {
       throw new TypeError("Error: Bit field (first parameter) should be an integer number");
     }
     return v & ~BitOps.mask(n);
   }
-  
   static _switch(v, n) {
     if (!(Number.isInteger(v))) {
       throw new TypeError("Error: Bit field (first parameter) should be an integer number");
@@ -52,42 +49,33 @@ class BitOps {
     }
     return 1 << n;
   }
-  
-  static check(v, n) {
+  static bit(v, n) {
     if (!(Number.isInteger(v))) {
       throw new TypeError("Error: Bit field (first parameter) should be an integer number");
     }
     return v & BitOps.mask(n);
   }
-  
   static on(v, n, e = null) {
     return BitOps._op(BitOps._on, v, n, e);
   }
-  
   static off(v, n, e = null) {
     return BitOps._op(BitOps._off, v, n, e);
   }
-  
   static switch(v, n, e = null) {
     return BitOps._op(BitOps._switch, v, n, e);
   }
-  
   static off_rightmost1(v) {
     return v & (v - 1);
   }
-  
   static on_rightmost0(v) {
     return v | (v + 1);
   }
-  
   static isolate_rightmost1(v) {
     return v & (-v);
   }
-  
   static isolate_rightmost0(v) {
     return ~v & (v + 1);
   }
-  
   static right_propagate_rightmost1(v) {
     return v | (v - 1);
   }

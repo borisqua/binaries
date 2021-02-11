@@ -29,19 +29,19 @@ describe('BitOps - Bit operations static functions library', () => {
   });
   describe('BitOps.check(n, v) - should return _true_ if n-th bit of v is set and _false_ otherwise', () => {
     it('should return false when n=0 and v=2 -> [..0001{0}bin]', () => {
-      assert(!BitOps.check(2, 0), "first bit in 2dec=10bin shouldn't be set");
+      assert(!BitOps.bit(2, 0), "first bit in 2dec=10bin shouldn't be set");
     });
     it('should return true when n=1 and v=2 -> [..000{1}0bin]', () => {
-      assert(BitOps.check(2, 1), "second bit in 2dec=10bin should be set");
+      assert(BitOps.bit(2, 1), "second bit in 2dec=10bin should be set");
     });
     it('should return false when n=2 and v=2 -> [..00{0}10bin]', () => {
-      assert(!BitOps.check(2, 2), "third bit in 2dec=010bin shouldn't be set");
+      assert(!BitOps.bit(2, 2), "third bit in 2dec=010bin shouldn't be set");
     });
     it('should return an error if v is not a number', () => {
-      assert.throws(() => BitOps.check('a', 0), {"name": "TypeError"});
+      assert.throws(() => BitOps.bit('a', 0), {"name": "TypeError"});
     });
     it('should return an error if n is not a number', () => {
-      assert.throws(() => BitOps.check(4, 'a'), {"name": "TypeError"});
+      assert.throws(() => BitOps.bit(4, 'a'), {"name": "TypeError"});
     });
   });
   describe('BitOps.on(v, n) - should set n-th bit in bit-field v and return changed v', () => {

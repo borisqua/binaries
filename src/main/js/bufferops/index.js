@@ -2,7 +2,8 @@
 
 //static buffer operations container
 class BufferOps {
-/**
+  
+  /**
    * vInt function calculates length, value and uint8 buffer of variable-length integer
    *
    * @param {Array} buffer stream buffer or string that contains variable-length integers of EBML stream or file
@@ -62,6 +63,7 @@ class BufferOps {
     if (offset + length > buffer.length) throw new Error(`Length out of buffer boundaries: ${length}`);
     return `0${buffer[offset + exp].toString(16)}`.substr(-2) + (exp === 0 ? "" : this.littleEndian(buffer, exp, offset));
   }
+  
 }
 
-module.exports = Buffer;
+module.exports = BufferOps;
