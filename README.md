@@ -25,9 +25,9 @@ This is my set of JavaScript functions to deal with binary values
   - [`isolate_rightmost0()` - isolate a rightmost clear bit in a bit field](#isolate_rightmost0---isolate-a-rightmost-clear-bit-in-a-bit-field)
   - [`right_propagate_rightmost1()` - propagate a rightmost set bit in a bit field](#right_propagate_rightmost1---propagate-a-rightmost-set-bit-in-a-bit-field)
 - [Binary buffer operations](#binary-buffer-operations)
-  - [readBigEndian(buffer, length, offset)](#variable-length-int-vintbuffer-offset)
-  - [readLittleEndian(buffer, length, offset)](#big-endian-value-bigendianbuffer-length-offset)
-  - [read64BigEndian(buffer, length, offset)](#little-endian-value-littleendianbuffer-length-offset)
+  - [Variable length int `vInt(buffer, offset)`](#variable-length-int-vintbuffer-offset)
+  - [Big endian value `bigEndian(buffer, length, offset)`](#big-endian-value-bigendianbuffer-length-offset)
+  - [Little endian value `littleEndian(buffer, length, offset)`](#little-endian-value-littleendianbuffer-length-offset)
 
 
 ## `BitOps` static bit operations library
