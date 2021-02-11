@@ -127,14 +127,20 @@ creates the bit field object instance, and
 assigns the *v* value to its private *value* property. This property represents the 
 bit field value.
 
+[Back to contents](#table-of-contents)
+
 ### `get()` - returns the value of the BitField object
 Returns *Number* equal to the *value* property of the bit field object;
+
+[Back to contents](#table-of-contents)
 
 ### `set(v)` - sets the *value* property of the BitField object to *v*
 Checks if *v* is proper type (Should be of Number type) and sets the *value* 
 property of the bit field object to the *v*
 
 Returns the reference to itself.
+
+[Back to contents](#table-of-contents)
 
 ### `mask(n)` - bit mask for n-th bit
 Returns the *Number* equal to bit mask for the *n*-th bit in the field value
