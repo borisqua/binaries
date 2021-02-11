@@ -117,6 +117,9 @@ Returns *Number* equal to modified field *v*.
 
 [Back to contents](#table-of-contents)
 
+***
+___
+
 ## `BitField` binary field class
 Do the same operations as the BitOps static methods do, but operates like an object:
 modifies and returns itself, so it can build the functional style operations chains.
