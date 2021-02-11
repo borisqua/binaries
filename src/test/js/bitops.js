@@ -27,7 +27,7 @@ describe('BitOps - Bit operations static functions library', () => {
       assert.throws(() => BitOps.mask('a'), {"name": "TypeError"});
     });
   });
-  describe('BitOps.check(n, v) - should return _true_ if n-th bit of v is set and _false_ otherwise', () => {
+  describe('BitOps.bit(n, v) - should return _true_ if n-th bit of v is set and _false_ otherwise', () => {
     it('should return false when n=0 and v=2 -> [..0001{0}bin]', () => {
       assert(!BitOps.bit(2, 0), "first bit in 2dec=10bin shouldn't be set");
     });
@@ -219,7 +219,7 @@ describe('BitOps - Bit operations static functions library', () => {
       assert.equal(BitOps.off_rightmost1(28), 24);
     });
   });
-  describe('BitOps.on_rightmost1(v) - should set the rightmost clear bit in the field v', () => {
+  describe('BitOps.on_rightmost0(v) - should set the rightmost clear bit in the field v', () => {
     it('should return b11011 (d27) if the rightmost set bit will be turned off in the binary field b11001 (d25)', () => {
       assert.equal(BitOps.on_rightmost0(Number.parseInt('11001', 2)), Number.parseInt('11011', 2));
       assert.equal(BitOps.on_rightmost0(25), 27);

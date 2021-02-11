@@ -42,7 +42,7 @@ class BitField {
   get = () => this.value;
   set = v => {
     if (!(Number.isInteger(v))) {
-      return this; // do nothing if v isn't a number
+      throw new TypeError("Error: Bit field should be an integer number");
     }
     this.value = v;
     return this;
@@ -57,22 +57,26 @@ class BitField {
   on = (n, e = null) => this._op(this._on, this.value, n, e);
   off = (n, e = null) => this._op(this._off, this.value, n, e);
   switch = (n, e = null) => this._op(this._switch, this.value, n, e);
-  off_rightmost1 = v => {
-    this.value = v & (v - 1);
+  off_rightmost1 = () => {
+    this.value = this.value & (this.value - 1);
     return this;
   };
-  on_rightmost0 = v => {
-    this.value = v | (v + 1);
+  on_rightmost0 = () => {
+    this.value = this.value | (this.value + 1);
     return this;
   };
-  isolate_rightmost1 = v => {
-    this.value = v & (-v);
+  isolate_rightmost1 = () => {
+    this.value = this.value & (-this.value);
     return this;
   };
-  isolate_rightmost0 = v => {
-    this.value = ~v & (v + 1);
+  isolate_rightmost0 = () => {
+    this.value = ~this.value & (this.value + 1);
     return this;
   };
+  right_propagate_rightmost1() {
+    this.value = this.value | (this.value - 1);
+    return this;
+  }
   
 }
 
