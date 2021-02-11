@@ -62,7 +62,6 @@ Returns *Number* equal to modified field *v*.
 
 ### `BitOps.off(v, n, e)` - clear bits in a bit-field
 This function has three signatures:
-This function has three signatures:
 - `BitOps.off(v,n)`, where *n* is a bit index: sets *n*-th bit, in the *v* binary field, off;
 - `BitOps.off(v,n)`, where *n* is an array of bit indexes:
   sets each bit, with an index from the *n* array in the *v* binary field, off;
