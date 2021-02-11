@@ -6,8 +6,8 @@ class BufferOps {
   /**
    * vInt function calculates length, value and uint8 buffer of variable-length integer
    *
-   * @param {Array} buffer stream buffer or string that contains variable-length integers of EBML stream or file
-   * @param {number} offset buffer index of the first byte of the variable-length integer
+   * @param {Array} buffer: stream buffer or string that contains variable-length integers of EBML stream or file
+   * @param {number} offset: buffer index of the first byte of the variable-length integer
    * @return {{start: number, length: number, buffer: Array.<*>, value: *}} {offset, length, value buffer, value}
    * **/
   static vInt(buffer, offset = 0) {

@@ -9,32 +9,32 @@ const
 describe('BitOps - Bit operations static functions library', () => {
   describe('BitOps.mask(n) - should return bit-mask with n-th bit set', () => {
     it('should return 1 when n=0 -> [..0001bin] = 1dec', () => {
-      assert.equal(BitOps.mask(0)/*bit 0 set to 1*/, Number.parseInt('00001', 2));
+      assert.equal(BitOps.mask(0), Number.parseInt('00001', 2));
     });
     it('should return 2 when n=1 -> [..0010bin] = 1dec', () => {
-      assert.equal(BitOps.mask(1)/*bit 0 set to 1*/, Number.parseInt('00010', 2));
+      assert.equal(BitOps.mask(1), Number.parseInt('00010', 2));
     });
     it('should return 4 when n=2 -> [..0100bin] = 1dec', () => {
-      assert.equal(BitOps.mask(2)/*bit 0 set to 1*/, Number.parseInt('00100', 2));
+      assert.equal(BitOps.mask(2), Number.parseInt('00100', 2));
     });
     it('should return 8 when n=3 -> [..1000bin] = 1dec', () => {
-      assert.equal(BitOps.mask(3)/*bit 0 set to 1*/, Number.parseInt('01000', 2));
+      assert.equal(BitOps.mask(3), Number.parseInt('01000', 2));
     });
     it('should return 16 when n=4 -> [.10000bin] = 1dec', () => {
-      assert.equal(BitOps.mask(4)/*bit 0 set to 1*/, Number.parseInt('10000', 2));
+      assert.equal(BitOps.mask(4), Number.parseInt('10000', 2));
     });
     it('should return an error if n is not a number', () => {
       assert.throws(() => BitOps.mask('a'), {"name": "TypeError"});
     });
   });
   describe('BitOps.bit(n, v) - should return _true_ if n-th bit of v is set and _false_ otherwise', () => {
-    it('should return false when n=0 and v=2 -> [..0001{0}bin]', () => {
+    it('should return false when n=0 and v=2 -> [..00010bin]', () => {
       assert(!BitOps.bit(2, 0), "first bit in 2dec=10bin shouldn't be set");
     });
-    it('should return true when n=1 and v=2 -> [..000{1}0bin]', () => {
+    it('should return true when n=1 and v=2 -> [..00010bin]', () => {
       assert(BitOps.bit(2, 1), "second bit in 2dec=10bin should be set");
     });
-    it('should return false when n=2 and v=2 -> [..00{0}10bin]', () => {
+    it('should return false when n=2 and v=2 -> [..00010bin]', () => {
       assert(!BitOps.bit(2, 2), "third bit in 2dec=010bin shouldn't be set");
     });
     it('should return an error if v is not a number', () => {
@@ -75,7 +75,15 @@ describe('BitOps - Bit operations static functions library', () => {
       assert.equal(BitOps.on(16, 3, 0), Number.parseInt('11111', 2));
       assert.equal(BitOps.on(16, 3, 0), 31);
       assert.equal(BitOps.on(16, 0, 3), Number.parseInt('11111', 2));
-      assert.equal(BitOps.on(16, 3, 0), 31);
+      assert.equal(BitOps.on(16, 0, 3), 31);
+    });
+    it('should return 23 if set bits from 2 to 0 in v=16', () => {
+      assert.equal(BitOps.on(16, 0, 2), Number.parseInt('10111', 2));
+      assert.equal(BitOps.on(16, 2, 0), 23);
+    });
+    it('should return 22 if set bits from 2 to 0 in v=16', () => {
+      assert.equal(BitOps.on(16, 1, 2), Number.parseInt('10110', 2));
+      assert.equal(BitOps.on(16, 2, 1), 22);
     });
     it('should return an error if v is not a number', () => {
       assert.throws(() => BitOps.on('a', 0, 3), {"name": "TypeError"});
@@ -127,6 +135,12 @@ describe('BitOps - Bit operations static functions library', () => {
       assert.equal(BitOps.off(31, 0, 3), Number.parseInt('10000', 2));
       assert.equal(BitOps.off(31, 3, 0), 16);
     });
+    it('should return 21 if clear bits from 3 to 1 in v=31', () => {
+      assert.equal(BitOps.off(31, 3, 1), Number.parseInt('10001', 2));
+      assert.equal(BitOps.off(31, 3, 1), 17);
+      assert.equal(BitOps.off(31, 1, 3), Number.parseInt('10001', 2));
+      assert.equal(BitOps.off(31, 3, 1), 17);
+    });
     it('should return an error if v is not a number', () => {
       assert.throws(() => BitOps.off('a', 0, 3), {"name": "TypeError"});
     });
@@ -148,6 +162,12 @@ describe('BitOps - Bit operations static functions library', () => {
     });
     it('should return 3 if switch first bit in v=2', () => {
       assert.equal(BitOps.switch(2, 0), Number.parseInt('00011', 2))
+    });
+    it('should return 2 if switch first bit in v=3', () => {
+      assert.equal(BitOps.switch(31, 2), Number.parseInt('11011', 2))
+    });
+    it('should return 3 if switch first bit in v=2', () => {
+      assert.equal(BitOps.switch(16, 2), Number.parseInt('10100', 2))
     });
     it('should return an error if v or n is not a number', () => {
       assert.throws(() => BitOps.switch('a', 0), {"name": "TypeError"});

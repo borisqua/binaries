@@ -61,8 +61,8 @@ describe("BitField - Binary field object methods", () => {
   });
   describe('bf.on(n) - should set n-th bit in a bf and return bf object itself', () => {
     it('br.on(n) should set n-th bit and return bit-field itself', () => {
-      assert(bf.on(1) instanceof BitField, "bf.on(n) should return itself");
-      assert.equal(bf.get(), 23, "gf.get() should return BitField value");
+      // assert(bf.set(21).on(1) instanceof BitField, "bf.on(n) should return itself");
+      assert.equal(bf.set(21).on(1).get(), 23, "gf.get() should return BitField value");
     });
     it('should return an error if n is not a number', () => {
       assert.throws(() => bf.on('a'), {"name": "TypeError"});
@@ -250,5 +250,3 @@ describe("BitField - Binary field object methods", () => {
     });
   });
 });
-
-
