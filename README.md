@@ -111,7 +111,7 @@ Returns a *Number* equal to modified field *v*.
 
 [Back to contents](#table-of-contents)
 
-### `BitOps.right_propagate_rightmost1(v)` - propagate a rightmost set bit to the right
+### `BitOps.right_propagate_rightmost1(v)` - propagate a rightmost set bit
 Propagate the rightmost set to 1 bit to the right bound of the field *v*
 
 Returns a *Number* equal to modified field *v*.
@@ -221,7 +221,7 @@ Returns the reference to itself.
 
 [Back to contents](#table-of-contents)
 
-### `right_propagate_rightmost1()` - propagate a rightmost set bit to the right
+### `right_propagate_rightmost1()` - propagate a rightmost set bit
 Propagate the rightmost bit set to 1 to the right bound of the bit field
 
 Returns the reference to itself.
